@@ -156,7 +156,7 @@ int rv_encode_S(rv_op op, rv_reg rs1, rv_reg rs2, int imm)
 
 int rv_encode_B(rv_op op, rv_reg rs1, rv_reg rs2, int imm)
 {
-    int sign = 0;
+    unsigned int sign = 0;
 
     /* 13 signed bits, with bit zero ignored */
     if (imm > 4095 || imm < -4096)
@@ -172,7 +172,7 @@ int rv_encode_B(rv_op op, rv_reg rs1, rv_reg rs2, int imm)
 
 int rv_encode_J(rv_op op, rv_reg rd, int imm)
 {
-    int sign = 0;
+    unsigned int sign = 0;
 
     if (imm < 0) {
         sign = 1;
